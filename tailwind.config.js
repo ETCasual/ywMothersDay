@@ -1,10 +1,15 @@
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,tsx,jsx}",
-    "./src/components/**/*.{js,ts,tsx,jsx}",
-  ],
+  content: ['./src/modules/**/*.{js,ts,tsx,jsx}', './src/components/**/*.{js,ts,tsx,jsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+      colors: {
+        primary: '#8c080d',
+        secondary: '#f7941d',
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

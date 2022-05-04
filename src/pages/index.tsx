@@ -1,3 +1,10 @@
-const IndexPage = () => <h1 className="text-red-500">Hello Next.js 👋</h1>;
+import { FirebaseProps } from '../config/firebaseProps';
+import { Mobile } from '../modules/mobile';
+
+const IndexPage = () => (
+  <FirebaseProps>
+    <Mobile />
+  </FirebaseProps>
+);
 
 export default IndexPage;
