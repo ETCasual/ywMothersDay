@@ -59,7 +59,7 @@ export const L5Screen: React.FC = () => {
           </Slider>
         ) : (
           <div className="h-full w-full bg-white rounded-xl flex justify-center items-center drop-shadow-2xl">
-            <p className="font-roboto font-bold text-primary text-6xl">
+            <p className="font-roboto font-bold text-primary text-[8rem]">
               <Typewriter
                 deleteSpeed={200}
                 delaySpeed={5000}
