@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ref, set } from 'firebase/database';
+import { ref } from 'firebase/database';
 import { useDatabase, useDatabaseObjectData } from 'reactfire';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
