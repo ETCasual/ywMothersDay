@@ -26,6 +26,10 @@ export const L5Screen: React.FC = () => {
 
   return typeof window !== 'undefined' && status == 'success' ? (
     <>
+      <img
+        src="/img/scrapbookTexture.jpg"
+        className="absolute w-full h-full object-cover mix-blend-overlay z-[3]"
+      />
       <img src="/img/lightbulb.png" className="z-[3] absolute transform scale-[0.4] nudge" />
       <img src="/img/plane.png" className="z-[3] right-0 absolute transform scale-[0.4] nudge" />
       <div
@@ -39,24 +43,28 @@ export const L5Screen: React.FC = () => {
         </div>
 
         {data ? (
-          <Slider
-            slidesToShow={1}
-            dots={false}
-            infinite
-            speed={1000}
-            autoplay
-            autoplaySpeed={5000}
-            fade
-            adaptiveHeight
-            arrows={false}
-            className="h-full w-full bg-white rounded-xl drop-shadow-2xl"
-          >
-            {Object.values(data).map((d, i) =>
-              d && d.approved ? (
-                <CarouselItem key={i} text={d.text} name={d.name} cg={d.cg} />
-              ) : null
-            )}
-          </Slider>
+          <>
+            <div className="flex flex-col relative w-full h-full bg-white rounded-xl drop-shadow-2xl">
+              <Slider
+                slidesToShow={1}
+                dots={false}
+                infinite
+                speed={1000}
+                autoplay
+                autoplaySpeed={5000}
+                fade
+                adaptiveHeight
+                arrows={false}
+                className="h-full w-full"
+              >
+                {Object.values(data).map((d, i) =>
+                  d && d.approved ? (
+                    <CarouselItem key={i} text={d.text} name={d.name} cg={d.cg} />
+                  ) : null
+                )}
+              </Slider>
+            </div>
+          </>
         ) : (
           <div className="h-full w-full bg-white rounded-xl flex justify-center items-center drop-shadow-2xl">
             <p className="font-roboto font-bold text-primary text-[8rem]">
