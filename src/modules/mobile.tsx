@@ -41,7 +41,7 @@ export const Mobile: React.FC = () => {
             placeholder={value ? value.cg : null}
             onChange={(e) => (e.target.value ? setCG(e.target.value) : null)}
           />
-          <p className="text-xl font-roboto font-bold text-primary mb-1">有什么想对妈妈说的吗?</p>
+          <p className="text-xl font-roboto font-bold text-primary mb-1">Say Something!</p>
           <textarea
             className="rounded-md border-2 px-2 py-1 border-primary font-roboto"
             rows={3}
