@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ref, set } from 'firebase/database';
 import { useDatabase, useDatabaseObjectData } from 'reactfire';
-import { useSubmitted } from '../store/useSubmitted';
 import { ToastContainer, toast } from 'react-toastify';
 
 export const Approval: React.FC = () => {
@@ -16,9 +15,11 @@ export const Approval: React.FC = () => {
   return status === 'success' ? (
     <div className="w-full h-screen" style={{ backgroundColor: '#f7941d' }}>
       <div className="w-full  grid grid-cols-1 gap-5 p-5" style={{ backgroundColor: '#f7941d' }}>
-        {Object.values(data).map((d, i) =>
-          d && !d.approved ? <PostCard name={d.name} cg={d.cg} text={d.text} key={i} /> : null
-        )}
+        {data
+          ? Object.values(data).map((d, i) =>
+              d && !d.approved ? <PostCard name={d.name} cg={d.cg} text={d.text} key={i} /> : null
+            )
+          : null}
       </div>
       <ToastContainer />
     </div>
