@@ -32,13 +32,13 @@ export const Mobile: React.FC = () => {
             className="rounded-md px-2 py-1 border-2 border-primary font-roboto mb-2"
             disabled={loading}
             onChange={(e) => (e.target.value ? setName(e.target.value) : null)}
-            placeholder={value ? value.name : null}
+            placeholder={value ? value.name : 'Your Name...'}
           />
           <p className="text-xl font-roboto font-bold text-primary mb-1">你的小组</p>
           <input
             className="rounded-md px-2 py-1 border-2 border-primary font-roboto mb-2"
             disabled={loading}
-            placeholder={value ? value.cg : null}
+            placeholder={value ? value.cg : 'Your CG...'}
             onChange={(e) => (e.target.value ? setCG(e.target.value) : null)}
           />
           <p className="text-xl font-roboto font-bold text-primary mb-1">Say Something!</p>
@@ -47,7 +47,7 @@ export const Mobile: React.FC = () => {
             rows={3}
             style={{ resize: 'none' }}
             disabled={loading}
-            placeholder={value ? value.text : null}
+            placeholder={value ? value.text : 'Say Something!'}
             onChange={(e) => (e.target.value ? setText(e.target.value) : null)}
           />
           <button
